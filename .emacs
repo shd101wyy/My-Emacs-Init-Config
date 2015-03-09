@@ -81,24 +81,24 @@
 
   ;; remove all other windows
   (delete-other-windows)
-  (print (current-buffer))
-  (print (window-list))
+  ;;  (print (current-buffer))
+  ;;  (print (window-list))
 
   ;; split windows
   (split-window-vertically) ;; create view for directory and files
-  (split-window-horizontally) ;; create view for terminal
+  ;;(split-window-horizontally) ;; create view for terminal
   (enlarge-window 15)  ;; shrink below terminal window 
-  (shrink-window-horizontally 55)   ;; shrink left dir window
+  ;;(shrink-window-horizontally 55)   ;; shrink left dir window
   
   ;;; display shell
   (shell "*shd101wyy-shell*")  ; create shell
-  (set-window-buffer (nth (window-list) 2) "*shd101wyy-shell*") ;; display shell
+  (set-window-buffer (cadr (window-list)) "*shd101wyy-shell*") ;; display shell
 
   ;;; display dir
-  (dired "./")
+  ;;(dired "./")
 
   ;; move cursor to the panel on right side.
-  (other-window 1)
+  ;;(other-window 1)
 
   ;; done
   (message "Finish initializing working layout")
